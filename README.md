@@ -1,15 +1,17 @@
 # UE-AD-A1-REST  
 
 ## Sommaire
-- [Introduction](#introduction-)
+- [Introduction](#introduction)
 - [Détails des composants](#archi)
-- [Utilisation](#utilisation)
+- [Lancement](#launch)
+- [Test avec Postman](#postman)
 - 
-## Introduction
+## Introduction <a name="introduction" />
 Il s’agit d’une application jouet et peu réaliste pour gérer les films et les réservations d’utilisateurs dans un cinéma. Cette application est composée de 4 micro-services :
 
-![Diagramme  conceptuel de la solution](conception.png "Diagramme conceptuel")
-## Détails des composants
+<img src="conception.png" alt="Diagramme  conceptuel de la solution" width="auto"/>
+
+## Détails des composants <a name="archi" />
 - 🎥 Movie : micro-service responsable de la gestion des films du cinéma. Il contient et gère une petite base de données json contenant la liste des films disponibles avec quelques informations sur les films.
 ```json
 //Exemple de configuration pour un film
@@ -59,4 +61,8 @@ Il s’agit d’une application jouet et peu réaliste pour gérer les films et 
       ]
     }
 ```
+
+## Lancement <a name="launch" />
+
+## Test avec Postman <a name="postman" />
 
