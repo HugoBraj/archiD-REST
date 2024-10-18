@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "2d6f39c1-a90e-48df-adae-aa60bf21a7a4",
+		"name": "ArchiD-REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38639830"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/help",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/help",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"help"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/json",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/json",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/<id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/movies/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"movies",
+								"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/moviesbytitle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/moviesbytitle?title=Test",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"moviesbytitle"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/<id>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"title\": \"Test\",\r\n      \"rating\": 1.2,\r\n      \"director\": \"Someone\",\r\n      \"id\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3200/movies/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"movies",
+								"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/movies/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"movies",
+								"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/<id>/<rating>",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/movies/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx/8.2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"movies",
+								"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+								"8.2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Time (Showtime)",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "showtimes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3202/showtimes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3202",
+							"path": [
+								"showtimes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showtimes/<date>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3202/showtimes/20151130",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3202",
+							"path": [
+								"showtimes",
+								"20151130"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3201/bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3201",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings/<userId>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3201/bookings/chris_rivers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3201",
+							"path": [
+								"bookings",
+								"chris_rivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookings/<userid>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"20151120\",\r\n    \"movies\": [\r\n        \"267eedb8-0f5d-42d5-8f43-72426b9fb3e6\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3201/bookings/chris_rivers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3201",
+							"path": [
+								"bookings",
+								"chris_rivers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3203/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3203",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3203/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3203",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/<id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3203/users/chris_rivers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3203",
+							"path": [
+								"users",
+								"chris_rivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/<id>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3203/users/chris_rivers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3203",
+							"path": [
+								"users",
+								"chris_rivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/<id>/bookings",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "/users/<id>/detailed_bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3203/users/chris_rivers/detailed_bookings",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3203",
+							"path": [
+								"users",
+								"chris_rivers",
+								"detailed_bookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
