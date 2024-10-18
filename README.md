@@ -5,11 +5,11 @@
 - [Détails des composants](#archi)
 - [Lancement](#launch)
 - [Test avec Postman](#postman)
-- 
+
 ## Introduction <a name="introduction" />
 Il s’agit d’une application jouet et peu réaliste pour gérer les films et les réservations d’utilisateurs dans un cinéma. Cette application est composée de 4 micro-services :
 
-<img src="conception.png" alt="Diagramme  conceptuel de la solution"/>
+<img src="/conception.png" alt="Diagramme  conceptuel de la solution"/>
 
 ## Détails des composants <a name="archi" />
 - 🎥 Movie : micro-service responsable de la gestion des films du cinéma. Il contient et gère une petite base de données json contenant la liste des films disponibles avec quelques informations sur les films.
@@ -71,17 +71,17 @@ Le script va d'abord lancer un environnement virtuel python puis y installer les
 Si tout se déroule bien, vous devriez voir le mot FINISH dessiné dans la fenêtre de lancement suivie des 4 serveurs de développements des micro-services.
 
 C'est dans cette fenêtre que vous pourrez suivre en temps réel l'utilisation de l'application et les différents appels qui sont effectués.
-<img src="trace.png" alt="Screenshot de la fenêtre actie lié à launch.py" />
+<img src="/trace.png" alt="Screenshot de la fenêtre actie lié à launch.py" />
 
 ## Test avec Postman <a name="postman" />
 Un fichier ```ArchiD-REST.postman_collection.json``` se trouve à la racine du projet.
 
 Ce fichier JSON peut-être importé dans l'outil Postman.
 
-<img src="import-postman.png" alt="Screenshot tuto import json dans postman"/>
+<img src="/import-postman.png" alt="Screenshot tuto import json dans postman"/>
 
 
 Il propose pour chaque service une collection de requêtes pré-faites permettant de tester le bon fonctionnement de l'application.
 > Appuyez sur Send pour exécuter une requête
 
- <img src="request-postman.png" alt="Screenshot collections requêtes postman"/>
+ <img src="/request-postman.png" alt="Screenshot collections requêtes postman"/>
