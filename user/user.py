@@ -45,7 +45,7 @@ def get_user(id):
         if user['id'] == id:
             return make_response(jsonify(user), 200)
         else:
-            return make_response(jsonify({"error": "User not found for id '" + id + "'"}), 200)
+            return make_response(jsonify({"error": "User not found for id '" + id + "'"}), 400)
 
 
 @app.route("/users/<id>", methods=['POST'])
