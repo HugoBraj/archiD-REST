@@ -84,4 +84,4 @@ Ce fichier JSON peut-être importé dans l'outil Postman.
 Il propose pour chaque service une collection de requêtes pré-faites permettant de tester le bon fonctionnement de l'application.
 > Appuyez sur Send pour exécuter une requête
 
- <img src="/request-postman.png" alt="Screenshot collections requêtes postman"/>
+<img src="/request-postman.png" alt="Screenshot collections requêtes postman"/>
