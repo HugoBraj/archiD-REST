@@ -26,7 +26,7 @@ with open(json_file_path, "r") as jsf:
 
 @app.route("/", methods=['GET'])
 def home():
-    return "<h1 style='color:blue'>Welcome to the Booking service!</h1>"
+    return '<body style="background-color: #2c2c2c; color: #e0e0e0; font-family: Arial, sans-serif; display: flex;flex-direction: column;justify-content: center;align-items: center;height: 100vh;margin: 0;"><h1 style="font-size: 2em;color: #f0f0f0;">Bienvenue sur le composant <span style="color: #1e90ff">Booking</span><span style="margin-left: 10px;">🎉</span></h1></body>'
 
 
 @app.route("/bookings", methods=['GET'])

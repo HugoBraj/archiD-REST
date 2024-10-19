@@ -1,3 +1,5 @@
+import time
+
 from flask import Flask, render_template, request, jsonify, make_response
 import requests
 import json
@@ -28,7 +30,7 @@ with open(json_file_path, "r") as jsf:
 
 @app.route("/", methods=['GET'])
 def home():
-    return "<h1 style='color:blue'>Welcome to the User service!</h1>"
+    return '<body style="background-color: #2c2c2c; color: #e0e0e0; font-family: Arial, sans-serif; display: flex;flex-direction: column;justify-content: center;align-items: center;height: 100vh;margin: 0;"><h1 style="font-size: 2em;color: #f0f0f0;">Bienvenue sur le composant <span style="color: #1e90ff">User</span><span style="margin-left: 10px;">🎉</span></h1></body>'
 
 
 # un point d’entrée permettant d’obtenir les réservations à partir du nom ou de l’ID d’un utilisateur ce qui
@@ -64,6 +66,32 @@ def write(users):
     with open(json_file_path, "w") as f:
         json.dump({"users": users}, f)
 
+@app.route("/users/<id>/update_lastactive", methods=['PUT'])
+def update_user_lastactive(id):
+    for user in users:
+        if str(user["id"]) == str(id):
+            user["last_active"] = round(time.time())
+            return make_response(jsonify(user), 200)
+
+
+@app.route("/users/<id>/update_name", methods=['PUT'])
+def uptade_user_name(id):
+    if request.args:
+        req = request.args
+
+        name = req.get("name")
+        if name is None:
+            return make_response(jsonify({"error": "Name not provided"}), 400)
+        for user in users:
+            if str(user["id"]) == str(id):
+                user["name"] = name
+                print(user)
+                return make_response(jsonify(user), 200)
+
+        return make_response(jsonify({"error": "User not found"}), 404)
+    else:
+        return make_response(jsonify({"error": "Name not provided in param"}), 400)
+
 
 @app.route("/users/<id>/bookings", methods=['GET'])
 def get_user_bookings(id):
@@ -75,8 +103,9 @@ def get_user_bookings(id):
         if bookings.status_code != 200:
             return bookings
         else:
+            # Mise à jour de la dernière visite de l'utilisateur
+            update_user_lastactive(id)
             return make_response(jsonify({id: bookings.json().get("dates")}), 200)
-
 
 @app.route("/users/<id>/detailed_bookings", methods=['GET'])
 def get_user_detailed_bookings(id):
@@ -93,8 +122,9 @@ def get_user_detailed_bookings(id):
                 if get_movie.status_code == 200:
                     movies.append(get_movie.json())
             booking.update({"movies": movies})
+            #Mise à jour de la dernière visite de l'utilisateur
+            update_user_lastactive(id)
         return make_response(jsonify({id: bookings_temp}), 200)
-
 
 if __name__ == "__main__":
     print("Server running in port %s" % (PORT))

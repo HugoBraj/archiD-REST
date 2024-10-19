@@ -28,21 +28,14 @@ with open(json_file_path, "r") as jsf:
 # root message
 @app.route("/", methods=['GET'])
 def home():
-    return make_response("<h1 style='color:blue'>Welcome to the Movie service!</h1>",200)
+    return make_response('<body style="background-color: #2c2c2c; color: #e0e0e0; font-family: Arial, sans-serif; display: flex;flex-direction: column;justify-content: center;align-items: center;height: 100vh;margin: 0;"><h1 style="font-size: 2em;color: #f0f0f0;">Bienvenue sur le composant <span style="color: #1e90ff">Movie</span><span style="margin-left: 10px;">🎉</span></h1></body>',200)
 
 @app.route("/help", methods=['GET'])
 def get_help():
-    list = ["GET /help : get the list of commands available",
-            "GET /movies/<movieid> : get the movie of id <movieid> ",
-            "GET /movies : get the list of movies as JSON",
-            "POST /addmovie/<movieid> : add a movie to database",
-            "DELETE /movies/<movieid> : delete a movie from database",
-            "PUT /movies/<movieid>/<rate> : update the rate of a movie"
-            ]
-    return make_response(render_template('help.html', body_text=list),200)
+    return make_response(render_template('help.html'),200)
 @app.route("/template", methods=['GET'])
 def template():
-    return make_response(render_template('index.html', body_text='This is my HTML template for Movie service'),200)
+    return make_response(render_template('index.html'),200)
 
 @app.route("/json", methods=['GET'])
 def get_json():
